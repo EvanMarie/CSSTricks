@@ -25,22 +25,131 @@
                 </span></a>
         </header>
         <main class="main">
-            <div class="v-stack">
-                <div class="nested-container">
-                    <p>This is a nested media query container within the body div. Its font color changes based on
-                        screen width.</p>
-                </div>
-                <div class="has-card">
-                    This is a "has-card" div without a "card-child" div inside.
-                </div>
-                <div class="has-card">
-                    <p>This is a "has-card" div WITH a "card-child" div inside.</p>
-                    <div class="card-child">
-                        This is a "has-child" div inside a "has-card" div. The font color and background change based on
-                        whether the
-                        has-card has a "card-child" div inside.
+            <div class="v-stack" style="gap: 2rem;">
+
+                <div class="v-stack">
+                    <div class="section-heading">Nested Media Query</div>
+                    <div class="nested-container">
+                        <p>This is a nested media query container within the body div. Its font color changes based on
+                            screen width.</p>
                     </div>
                 </div>
+                <div class="v-stack">
+                    <div class="section-heading">:has attribute</div>
+                    <div class="has-card">
+                        This is a "has-card" div without a "card-child" div inside.
+                    </div>
+                    <div class="has-card">
+                        <div style="padding: 2rem 1 rem">
+                            <p>This is a "has-card" div WITH a "card-child" div inside.</p>
+                        </div>
+                        <div class="card-child">
+                            This is a "has-child" div inside a "has-card" div. The font color and background change
+                            based on
+                            whether the
+                            has-card has a "card-child" div inside.
+                            My parent container's colors change because of my existence.
+                        </div>
+                    </div>
+                </div>
+                <div class="v-stack">
+                    <div class="section-heading">Text Wrap Styles</div>
+                    <div class="collapsible">
+                        <div class="h-stack">
+                            <div class="side-label">
+                                normal
+                            </div>
+                            <div class="normal-text">
+                                This is a <b>normal-text</b> div with some Alice In Wonderland: Alice was beginning
+                                to
+                                get
+                                very
+                                tired
+                                of sitting by her sister on the bank, and of having nothing to do...
+                            </div>
+                        </div>
+                        <div class="h-stack">
+                            <div class="side-label">
+                                balanced
+                            </div>
+                            <div class="balanced-text">
+                                This is a <b>balanced-text</b> div with some Alice In Wonderland: Alice was
+                                beginning to
+                                get
+                                very
+                                tired
+                                of sitting by her sister on the bank, and of having nothing to do...
+                            </div>
+                        </div>
+                        <div class="h-stack">
+                            <div class="side-label">
+                                pretty
+                            </div>
+                            <div class="pretty-text">
+                                This is a <b>pretty-text</b> div with some Alice In Wonderland: Alice was beginning
+                                to
+                                get
+                                very
+                                tired
+                                of sitting by her sister on the bank, and of having nothing to do...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="v-stack">
+                    <div class="section-heading">Color Mix</div>
+                    <div class="color-mix1">
+                        <p>This div has a ratio color-mix background:</p>
+                        <p> "background: color-mix(in srgb, red 50%, blue 50%);"</p>
+                    </div>
+                    <div class="transparent-mix-background">
+                        <p>This div has a ratio transparent-mix background:</p>
+                        <p>"background: color-mix(in srgb, rgba(255, 0, 0, 0.5) 50%, rgba(0, 0, 255, 0.5) 50%);"</p>
+                    </div>
+
+                    <div class="lightness-mix-background">
+                        <p>This div has a ratio lightness-mix background:</p>
+                        <p> "background: color-mix(in srgb, black plus 50% lightness, white minus 50% lightness);"</p>
+                    </div>
+                </div>
+                <div class="v-stack">
+                    <div class="section-heading">HSL Color Adjust (Chrome & Safari only)</div>
+                    <div style="background: hsl(from var(--pink) h s l / 0.3); padding: 1rem;">
+                        <p>This div has an HSL color-adjust background on <b>OPACITY</b>:</p>
+                        <p> "background: hsl(from var(--pink) h s l / 0.3); padding: 1rem"</p>
+                    </div>
+                    <div style="background: hsl(from var(--pink) calc(h + 10) s l / 1); padding: 1rem;">
+                        <p>This div has an HSL color-adjust background on <b>HUE</b>:</p>
+                        <p> "background: hsl(from var(--pink) calc(h + 10) s l / 1)"</p>
+                    </div>
+                    <div style="background: hsl(from var(--pink) h calc(s * 1.5) l / 1); padding: 1rem;">
+                        <p>This div has an HSL color-adjust background on <b>SATURATION</b>:</p>
+                        <p> "background: hsl(from var(--pink) h calc(s * .5) l / 1);"</p>
+                    </div>
+                </div>
+                <div class="v-stack" style="width: 75vw; container-type: inline-size;">
+                    <div class="section-heading">Container Query</div>
+                    <div class="card card-colors">I'm a card that changes background, font color, height, and font
+                        size based on the size of my
+                        parent
+                        container.
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <img class="grid-item" src="./resources/babyAnimal1.png">
+                    <img class="grid-item" src="./resources/babyAnimal2.png">
+                    <img class="grid-item" src="./resources/babyAnimal3.png">
+                    <img class="grid-item" src="./resources/babyAnimal4.png">
+                </div>
+
+                <div style="container-type: inline-size; width: 100%; display: flex; justify-content: center;">
+                    <div class="direction-changing">
+                        <img class="moving-piece" src="./resources/babyAnimal5.png">
+                        <img class="moving-piece" src="./resources/babyAnimal6.png">
+                        <img class="moving-piece" src="./resources/babyAnimal7.png">
+                    </div>
+                </div>
+
         </main>
         <footer class="footer">
             <p>Copyright &copy; 2023</p>
