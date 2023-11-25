@@ -11,15 +11,36 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
-    <div class="container">
+    <div class="entire-page">
         <header class="header">
-            <h1>Welcome to My Simple Project</h1>
+            <h1>CSS Tips and Tricks</h1>
+            <a href="https://www.youtube.com/watch?v=LGRogkgRrOs" target="_blank">
+                <span class="material-symbols-outlined" style="font-size: 40px;">
+                    link
+                </span></a>
         </header>
         <main class="main">
-            <p>This is a paragraph in the main content area.</p>
+            <div class="v-stack">
+                <div class="nested-container">
+                    <p>This is a nested media query container within the body div. Its font color changes based on
+                        screen width.</p>
+                </div>
+                <div class="has-card">
+                    This is a "has-card" div without a "card-child" div inside.
+                </div>
+                <div class="has-card">
+                    <p>This is a "has-card" div WITH a "card-child" div inside.</p>
+                    <div class="card-child">
+                        This is a "has-child" div inside a "has-card" div. The font color and background change based on
+                        whether the
+                        has-card has a "card-child" div inside.
+                    </div>
+                </div>
         </main>
         <footer class="footer">
             <p>Copyright &copy; 2023</p>
