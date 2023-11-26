@@ -28,3 +28,31 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("resize", () => {
   displayContainerWidth(".responsive-container");
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollContainer = document.querySelector(".scroll-container");
+  const items = document.querySelectorAll(".scroll-snap-item");
+  let currentIndex = 0; // Keep track of the current snap item
+
+  // Function to scroll to the next or previous item
+  function scrollToItem(newIndex) {
+    if (newIndex >= 0 && newIndex < items.length) {
+      const itemToScrollTo = items[newIndex];
+      scrollContainer.scrollTo({
+        top: itemToScrollTo.offsetTop - scrollContainer.offsetTop,
+        behavior: "smooth",
+      });
+      currentIndex = newIndex; // Update the current index
+    }
+  }
+
+  // Event listener for the up button
+  document.querySelector(".scroll-up").addEventListener("click", () => {
+    scrollToItem(currentIndex - 1); // Scroll to the previous item
+  });
+
+  // Event listener for the down button
+  document.querySelector(".scroll-down").addEventListener("click", () => {
+    scrollToItem(currentIndex + 1); // Scroll to the next item
+  });
+});

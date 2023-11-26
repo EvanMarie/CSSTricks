@@ -463,17 +463,21 @@ a:hover {
 
 .scroll-container {
   /* This enables scroll snapping */
-  width: 385px;
+  width: 350px;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 400px; /* Fixed height to enable scrolling */
+  height: 350px; /* Fixed height to enable scrolling */
   padding: 1rem;
+  gap: 20px;
+  padding: 0px 15px 0px 0px;
+  margin-right: 15px;
 }
 
 .scroll-snap-item {
-  height: 200px; /* Fixed height for each item */
+  height: 350px; /* Fixed height for each item */
+  width: 350px;
+  object-fit: cover;
   scroll-snap-align: start; /* Snaps the item to the start of the scroll container */
-  border: 1px solid #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -482,4 +486,8 @@ a:hover {
   box-shadow: var(--shadow);
   font-size: 1.5rem;
   text-shadow: var(--shadow);
+}
+
+.pointer {
+  cursor: pointer;
 }
