@@ -1,27 +1,28 @@
-// JavaScript file for Simple Project
+function displayContainerWidth(containerSelector) {
+  const containers = document.querySelectorAll(containerSelector);
+
+  containers.forEach((container) => {
+    const width = container.offsetWidth;
+    const widthDisplay = document.createElement("div");
+    widthDisplay.style.position = "absolute";
+    widthDisplay.style.top = "0";
+    widthDisplay.style.right = "0";
+    widthDisplay.style.backgroundColor = "rgba(0,0,0,0.7)";
+    widthDisplay.style.color = "white";
+    widthDisplay.style.padding = "5px 10px";
+    widthDisplay.textContent = `width: ${width}px`;
+
+    container.style.position = "relative";
+    container.appendChild(widthDisplay);
+  });
+}
+
+// Run the function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
+  displayContainerWidth(".responsive-container");
 });
 
-function createSectionStack(title, content) {
-  // Create the section element
-  const section = document.createElement("section");
-  section.className = "section-stack";
-
-  // Create the title element
-  const heading = document.createElement("h2");
-  heading.className = "section-heading";
-  heading.textContent = title;
-
-  // Create the content element
-  const contentDiv = document.createElement("div");
-  contentDiv.className = "section-content";
-  contentDiv.innerHTML = content;
-
-  // Append the title and content to the section
-  section.appendChild(heading);
-  section.appendChild(contentDiv);
-
-  // Finally, append the section to the main content area of the page
-  document.querySelector(".main").appendChild(section);
-}
+// Optional: Update width on window resize
+window.addEventListener("resize", () => {
+  displayContainerWidth(".responsive-container");
+});

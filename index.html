@@ -18,7 +18,7 @@
 <body>
     <div class="entire-page">
         <header class="header">
-            <h1>CSS Tips and Tricks</h1>
+            <h1 style="text-shadow: var(--shadow);">2023 New CSS Tricks</h1>
             <a href="https://www.youtube.com/watch?v=LGRogkgRrOs" target="_blank">
                 <span class="material-symbols-outlined" style="font-size: 40px;">
                     link
@@ -27,14 +27,14 @@
         <main class="main">
             <div class="v-stack" style="gap: 2rem;">
 
-                <div class="v-stack">
+                <div class="section-container">
                     <div class="section-heading">Nested Media Query</div>
                     <div class="nested-container">
                         <p>This is a nested media query container within the body div. Its font color changes based on
                             screen width.</p>
                     </div>
                 </div>
-                <div class="v-stack">
+                <div class="section-container">
                     <div class="section-heading">:has attribute</div>
                     <div class="has-card">
                         This is a "has-card" div without a "card-child" div inside.
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="v-stack">
+                <div class="section-container">
                     <div class="section-heading">Text Wrap Styles</div>
                     <div class="collapsible">
                         <div class="h-stack">
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="v-stack">
+                <div class="section-container">
                     <div class="section-heading">Color Mix</div>
                     <div class="color-mix1">
                         <p>This div has a ratio color-mix background:</p>
@@ -107,12 +107,12 @@
                         <p>"background: color-mix(in srgb, rgba(255, 0, 0, 0.5) 50%, rgba(0, 0, 255, 0.5) 50%);"</p>
                     </div>
 
-                    <div class="lightness-mix-background">
+                    <div class="lightness-mix-background" style="color: var(--black);">
                         <p>This div has a ratio lightness-mix background:</p>
                         <p> "background: color-mix(in srgb, black plus 50% lightness, white minus 50% lightness);"</p>
                     </div>
                 </div>
-                <div class="v-stack">
+                <div class="section-container">
                     <div class="section-heading">HSL Color Adjust (Chrome & Safari only)</div>
                     <div style="background: hsl(from var(--pink) h s l / 0.3); padding: 1rem;">
                         <p>This div has an HSL color-adjust background on <b>OPACITY</b>:</p>
@@ -122,12 +122,13 @@
                         <p>This div has an HSL color-adjust background on <b>HUE</b>:</p>
                         <p> "background: hsl(from var(--pink) calc(h + 10) s l / 1)"</p>
                     </div>
-                    <div style="background: hsl(from var(--pink) h calc(s * 1.5) l / 1); padding: 1rem;">
+                    <div
+                        style="background: hsl(from var(--pink) h calc(s * 1.5) l / 1); padding: 1rem; color: var(--black);">
                         <p>This div has an HSL color-adjust background on <b>SATURATION</b>:</p>
                         <p> "background: hsl(from var(--pink) h calc(s * .5) l / 1);"</p>
                     </div>
                 </div>
-                <div class="v-stack" style="width: 75vw; container-type: inline-size;">
+                <div class="section-container responsive-container" style="width: 75vw; container-type: inline-size;">
                     <div class="section-heading">Container Query</div>
                     <div class="card card-colors">I'm a card that changes background, font color, height, and font
                         size based on the size of my
@@ -135,20 +136,82 @@
                         container.
                     </div>
                 </div>
-                <div class="grid-container">
+                <div class="grid-container section-container">
                     <img class="grid-item" src="./resources/babyAnimal1.png">
                     <img class="grid-item" src="./resources/babyAnimal2.png">
                     <img class="grid-item" src="./resources/babyAnimal3.png">
                     <img class="grid-item" src="./resources/babyAnimal4.png">
                 </div>
-
-                <div style="container-type: inline-size; width: 100%; display: flex; justify-content: center;">
+                <div class="section-container"
+                    style="container-type: inline-size; width: 100%; display: flex; justify-content: center;">
                     <div class="direction-changing">
                         <img class="moving-piece" src="./resources/babyAnimal5.png">
                         <img class="moving-piece" src="./resources/babyAnimal6.png">
                         <img class="moving-piece" src="./resources/babyAnimal7.png">
                     </div>
                 </div>
+                <div class="section-container">
+                    <div class="section-heading">Grid & Sub Grid</div>
+                    <p>This is a grid</p>
+                    <div class="grid-container2">
+                        <div class="grid-item2">Item 1</div>
+                        <div class="grid-item2">Item 2</div>
+                    </div>
+                    <p>This is a grid with a sub-grid</p>
+                    <div class="grid-container2">
+                        <div class="grid-item2">Item 3</div>
+                        <div class="subgrid-container">
+                            <div class="subgrid-item">Subitem 1</div>
+                            <div class="subgrid-item">Subitem 2</div>
+                        </div>
+                    </div>
+                    <p>The purpose of subgrid is to allow a nested grid (a grid inside another grid item) to align its
+                        grid
+                        lines with the
+                        parent grid. This is useful when you want the content within a grid item to line up with the
+                        rest of
+                        the items in the
+                        grid.</p>
+                    <p>In this example, the .parent-grid sets up a two-column layout. The second grid item contains
+                        another
+                        grid, .child-grid.
+                        Instead of defining its own grid layout, .child-grid uses subgrid to line up with the
+                        .parent-grid's
+                        columns. This means
+                        that the .subgrid-item elements will align under the second column of the .parent-grid.</p>
+                    <p>The subgrid is especially useful when you want nested items to align with the main content or
+                        when
+                        you have complex
+                        nested structures and want to maintain a clean, consistent layout without manually syncing the
+                        grid
+                        gaps, column sizes,
+                        and row sizes of the nested grid with its parent.</p>
+                    <div class="grid-container2">
+                        <div class="grid-item2">Parent Item 1</div>
+                        <div class="grid-item2" style="height: fit-content; padding: 1rem;">
+                            <!-- This item will contain a subgrid -->
+                            <p>Parent Item 2</p>
+                            <div class="subgrid-container">
+                                <!-- The subgrid aligns its columns with the parent grid -->
+                                <div class="subgrid-item">Child Item 1</div>
+                                <div class="subgrid-item">Child Item 2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-container">
+                    <div class="section-heading">Snap Scroll</div>
+                    <div class="scroll-container">
+                        <div class="scroll-snap-item">Item 1</div>
+                        <div class="scroll-snap-item">Item 2</div>
+                        <div class="scroll-snap-item">Item 3</div>
+                        <div class="scroll-snap-item">Item 4</div>
+                        <div class="scroll-snap-item">Item 5</div>
+                        <div class="scroll-snap-item">Item 6</div>
+                        <div class="scroll-snap-item">Item 7</div>
+                    </div>
+                </div>
+
 
         </main>
         <footer class="footer">
