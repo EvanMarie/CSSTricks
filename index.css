@@ -491,3 +491,19 @@ a:hover {
 .pointer {
   cursor: pointer;
 }
+
+.screen-units {
+  background: var(--dark-grey);
+  color: var(--pink);
+  text-shadow: var(--shadow);
+  font-size: 1.5rem;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 40svw; /* The width will be 50% of the smaller dimension of the viewport */
+  height: 10lvw; /* The height will be 25% of the larger dimension of the viewport */
+  margin-top: 1dvw; /* The top margin will be 10% of the dynamic (changing) dimension of the viewport */
+}

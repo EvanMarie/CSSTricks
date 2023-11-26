@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Project</title>
+    <title>2023 New CSS Tricks</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,7 +200,7 @@
                     </div>
                 </div>
                 <div class="section-container">
-                    <div class="section-heading">Snap Scroll</div>
+                    <div class="section-heading">Snap Scroll (with buttons)</div>
                     <div class="h-stack">
                         <div class="scroll-container">
                             <img class="scroll-snap-item" src="./resources/babyAnimal8.png" />
@@ -222,7 +222,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="section-container">
+                    <div class="section-heading">Screen Dimension Units</div>
+                    <p>Viewport Units: New units like svw, lvw, and dvw give more control over responsive design by
+                        allowing sizes relative to
+                        different aspects of the viewport.</p>
+                    <div style="background: var(--dark-pink); padding: 1rem; box-shadow: var(--shadow);">
+                        <p style="font-size: 12px; font-weight: 700;">The container below has the following properties:
+                        </p>
+                        <p style="font-size: 12px; font-weight: 700;">width: 40svw; </p>
+                        <p style="font-size: 12px;">/* The width will be 40% of the
+                            smaller dimension of the viewport */</p>
+                        <p style="font-size: 12px; font-weight: 700;">
+                            height: 10lvw; </p>
+                        <p style="font-size: 12px;">/* The height will be 10% of the larger dimension of the viewport */
+                        </p>
+                        <p style="font-size: 12px;">
+                            margin-top: 8dvw; </p>
+                        <p style="font-size: 12px;">/* The top margin will be 8% of the dynamic (changing) dimension of
+                            the
+                            viewport */</p>
+                    </div>
+                    <!-- <div class="viewport-width-display"></div> -->
+                    <div class="screen-units screen-width-container">Responsive Content</div>
 
+                </div>
+            </div>
 
         </main>
         <footer class="footer">
