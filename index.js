@@ -7,10 +7,12 @@ function displayContainerWidth(containerSelector) {
     widthDisplay.style.position = "absolute";
     widthDisplay.style.top = "0";
     widthDisplay.style.right = "0";
-    widthDisplay.style.backgroundColor = "rgba(0,0,0,0.7)";
+    widthDisplay.style.backgroundColor = "var(--dark-pink";
     widthDisplay.style.color = "white";
     widthDisplay.style.padding = "5px 10px";
+    widthDisplay.style.boxShadow = "var(--shadow)";
     widthDisplay.textContent = `width: ${width}px`;
+    widthDisplay.style.textShadow = "var(--shadow)";
 
     container.style.position = "relative";
     container.appendChild(widthDisplay);
